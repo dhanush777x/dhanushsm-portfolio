@@ -418,13 +418,11 @@ export default function Terminal() {
                     key={section.id}
                     onClick={() => setActiveSection(section.id)}
                     aria-label={`Navigate to ${section.label} section`}
-                    className={`p-3 sm:p-4 md:p-3.5 rounded-lg transition-all backdrop-blur-sm ${activeSection === section.id ? "text-terminal-green section-glow" : "text-terminal-text-mutedLight hover:text-terminal-green hover:shadow-glow-sm"}`}
+                    className={`p-3 sm:p-4 md:p-3.5 rounded-lg transition-all backdrop-blur-sm flex items-center justify-center ${activeSection === section.id ? "text-terminal-green section-glow" : "text-terminal-text-mutedLight hover:text-terminal-green hover:shadow-glow-sm"}`}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="w-6 h-6 sm:w-7 sm:h-7 block">
-                      {getSectionIcon(section.id, "w-5 h-5 sm:w-6 sm:h-6")}
-                    </span>
+                    {getSectionIcon(section.id, "w-5 h-5 sm:w-6 sm:h-6")}
                   </motion.button>
                 ))}
               </div>
